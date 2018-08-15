@@ -36,13 +36,15 @@ RUN apt-get update && \
 #### 项目环境配置
 * 1.指定工作空间
 * 2.代码导入，依赖软件安装
-
+* 3.指定默认启动路径
 ```
 # 1
 WORKDIR /MTSVRC
 # 2
 COPY . .
 RUN pip install -r requirements.txt -i http://pypi.douban.com/simple  --trusted-host pypi.douban.com
+# 3
+ENTRYPOINT cd test && python run.py
 ```
 * 3.运行构建命令
 nvidia-docker build -t meitu2018 .
