@@ -38,8 +38,15 @@ RUN cd /software && \
 RUN rm -rf /var/lib/apt/lists/*
 
 # 项目构建
-WORKDIR /data1/server_deploy/PRCV
+WORKDIR /MTSVRC
 COPY . .
 
 # 安装依赖包
 RUN pip install -r requirements.txt -i http://pypi.douban.com/simple  --trusted-host pypi.douban.com
+
+###############################################
+# 以上部分用户可定制，以下部分不可删除
+###############################################
+
+# 指定启动路径
+ENTRYPOINT cd test && python run.py

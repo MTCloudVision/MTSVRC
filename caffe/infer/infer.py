@@ -1,9 +1,6 @@
 # -*- coding: utf-8 -*-
 
-import os
 import random
-
-from defines import IMAGE_DIR
 
 
 class ServerApi(object):
@@ -12,10 +9,11 @@ class ServerApi(object):
     注：
         1.handle为举办方验证接口，该接口必须返回预测分类值，参赛队伍需具体实现该接口
         2.模型装载操作必须在初始化方法中进行
+        3.初始化方法必须提供gpu_id参数
         3.其他接口都为参考，可以选择实现或删除
     """
-    def __init__(self):
-        self.model = self.load_model()
+    def __init__(self, gpu_id=0):
+        self.model = self.load_model(gpu_id)
 
     def video_frames(self, file_dir):
         """
@@ -25,9 +23,11 @@ class ServerApi(object):
         """
         return None
 
-    def load_model(self):
+    def load_model(self, gpu_id):
         """
         模型装载
+        :param gpu_id: 装载GPU编号
+        :return:
         """
         return ''
 
@@ -42,7 +42,7 @@ class ServerApi(object):
     def handle(self, video_dir):
         """
         算法处理
-        :param video_dir: 待处理视频路径
+        :param video_dir: 待处理单视频路径
         :return: 返回预测分类
         """
         return random.randint(0, 50)

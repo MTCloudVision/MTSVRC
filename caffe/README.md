@@ -39,13 +39,13 @@ RUN apt-get update && \
 
 ```
 # 1
-WORKDIR /data1/server_deploy/PRCV
+WORKDIR /MTSVRC
 # 2
 COPY . .
 RUN pip install -r requirements.txt -i http://pypi.douban.com/simple  --trusted-host pypi.douban.com
 ```
 * 3.运行构建命令
-nvidia-docker build -t demo_caffe .
+nvidia-docker build -t meitu2018 .
 * 4.查看构建结果
 nvidia-docker images
 
@@ -59,7 +59,7 @@ nvidia-docker images
 	- /bin/bash 指定命令行交互
 
 ```
-sudo nvidia-docker run -it demo_caffe /bin/bash
+sudo nvidia-docker run -it meitu2018 /bin/bash
 ```
 
 
@@ -125,11 +125,13 @@ RUN cd /software && \
 RUN rm -rf /var/lib/apt/lists/*
 
 # 项目构建
-WORKDIR /data1/server_deploy/PRCV
+WORKDIR /MTSVRC
 COPY . .
 
 # 安装依赖包
 RUN pip install -r requirements.txt -i http://pypi.douban.com/simple  --trusted-host pypi.douban.com
 
+# 指定启动路径
+ENTRYPOINT cd test && python run.py
 ```
 
