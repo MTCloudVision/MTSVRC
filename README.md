@@ -54,7 +54,7 @@
 * 具体参考：[Dockerfile](mxnet/Dockerfile)
 
 ##### 工作空间格式
-* 必须指定**/MTSVRC**为代码工作空间
+* 必须指定/MTSVRC为程序工作空间
     
 #### 代码结构
 * mxnet：mxnet版本demo
