@@ -47,10 +47,14 @@
     - 其中**handle**函数的输入需为单视频路径，输出需为该视频识别标签。
     - 参赛者需将模型加载等初始化操作并入__init__，并指定运行环境gpu_id。
     - 若参赛选手使用非python的其他语言，也需要使用python中转，实现infer.py的相关功能。
+    
 ##### Dockerfile格式
 * 不强制要求基础镜像的环境、框架和版本
 * 但必须启动执行：ENTRYPOINT cd test && python run.py
 * 具体参考：[Dockerfile](mxnet/Dockerfile)
+
+##### 工作空间格式
+* 必须指定**/MTSVRC**为代码工作空间
     
 #### 代码结构
 * mxnet：mxnet版本demo
