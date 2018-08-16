@@ -50,10 +50,10 @@ def time_counter():
     处理耗时统计
     :return:    平均耗时
     """
+    N = 10          # 遍历次数
+    num = 0         # 文本数
+    total = 0.0     # 总耗时
     time_list = []
-    num = 0     # 文本数
-    N = 10      # 遍历次数
-    total = 0.0 # 总耗时
     for i in range(N):
         count, t_val, result_list = verify_method('time')
         num = count
@@ -62,8 +62,7 @@ def time_counter():
 
     for item in time_list[1: -1]:
         total += item
-        num += 1
-    return total / (num * N)
+    return total / (num * (N - 2))
 
 
 def acc_counter():
