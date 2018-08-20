@@ -78,10 +78,9 @@ def acc_counter():
             line = line.replace('\n', '')
             label_list.append(line.split(',')[1])
             line = f.readline()
-    result_list = list(zip(* result_list)[1])
     num = 0
     for i, val in enumerate(result_list):
-        if int(val) == int(label_list[i]):
+        if int(val[1]) == int(label_list[i]):
             num += 1
     return num / float(total)
 
