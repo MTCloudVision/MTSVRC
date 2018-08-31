@@ -9,6 +9,8 @@
 
 ### 测试机器配置
 * GPU：TITAN Xp
+    - 驱动版本：384.130
+    - 支持CUDA版本：8.0、9.0
 * CPU：48 Intel(R) Xeon(R) CPU E5-2650 v4 @ 2.20GHz
 * 内存：128G
 
