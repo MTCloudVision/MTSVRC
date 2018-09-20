@@ -12,7 +12,7 @@ ROOT_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 VERIFY = os.path.join(ROOT_DIR, 'test')
 VIDEO_DIR = os.path.join(VERIFY, 'video')
 
-from mxnet.infer.infer import ServerApi
+from infer.infer import ServerApi
 
 server = ServerApi(0)
 
